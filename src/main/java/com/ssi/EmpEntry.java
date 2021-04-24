@@ -15,18 +15,13 @@ public class EmpEntry {
 		SessionFactory sf=config.buildSessionFactory();
 		Session session=sf.openSession();
 		Transaction tr=session.beginTransaction();
-		
-		//to insert a record, we need to create object of entity class.
-		//Emp e=new Emp(111,"AAA",25000,"SE");
-		//Emp e=new Emp(112,"BBB",30000,"SSE");
-		Emp e=new Emp(113,"CCC",40000,"SE","QA");
-		//set the properties using setter methods.
-		//e.setEno(111); e.setEname("AAA"); e.setSal(25000);e.setDesg("SE");
-		
-		//to save the object call save method on session object
-		
-		session.save(e);		//internally insert command will be generated
-		
+		Emp e1=new Emp(111,"AAA",25000,"SE");
+		Emp e2=new Emp(112,"BBB",45000,"SE");
+		Emp e3=new Emp(113,"CCC",50000,"SSE");
+		Emp e4=new Emp(114,"DDD",70000,"SSE");
+		Emp e5=new Emp(115,"EEE",85000,"TL");
+		session.save(e1); session.save(e2); session.save(e3);
+		session.save(e4); session.save(e5);
 		tr.commit();
 		session.close();
 		

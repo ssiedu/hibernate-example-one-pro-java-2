@@ -1,33 +1,24 @@
 package com.ssi;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="employee")
 public class Emp {
 	@Id
+	@Column(name="ecode")
 	private int eno;
+	@Column(name="empname")
 	private String ename;
+	@Column(name="salary")
 	private int sal;
+	@Column(name="designation")
 	private String desg;
-	private String dept;
 	
 	
-	
-	public String getDept() {
-		return dept;
-	}
-	public void setDept(String dept) {
-		this.dept = dept;
-	}
-	public Emp(int eno, String ename, int sal, String desg, String dept) {
-		super();
-		this.eno = eno;
-		this.ename = ename;
-		this.sal = sal;
-		this.desg = desg;
-		this.dept = dept;
-	}
 	public Emp() {
 		super();
 	}
