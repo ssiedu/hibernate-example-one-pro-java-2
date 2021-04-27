@@ -11,8 +11,9 @@ public class EmpEntry {
 		
 			//here we are going to insert a record in emp table
 
-		Configuration config=new Configuration().configure();
-		SessionFactory sf=config.buildSessionFactory();
+		//Configuration config=new Configuration().configure();
+		//SessionFactory sf=config.buildSessionFactory();
+		SessionFactory sf=Util.getSF();
 		Session session=sf.openSession();
 		Transaction tr=session.beginTransaction();
 		Emp e1=new Emp(111,"AAA",25000,"SE");
